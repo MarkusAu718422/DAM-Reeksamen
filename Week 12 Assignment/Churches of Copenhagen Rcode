@@ -1,0 +1,39 @@
+library(leaflet)
+library(dplyr)
+
+
+my_map <- leaflet() %>%
+  addTiles() %>%
+  setView(lng= 12.56833, lat= 55.6764, zoom = 12)%>%
+
+  library(leaflet)
+
+my_map <- leaflet() %>%
+  addTiles() %>%
+  
+  addMarkers(lng = 12.57243, lat = 55.68046,
+             popup = "Vor frue Kirke",
+             group = "Vor frue Kirke") %>%
+  
+  addMarkers(lng = 12.57645, lat = 55.68241,
+             popup = "Trinitatis kirke",
+             group = "Trinitatis kirke") %>%
+  
+  addMarkers(lng = 12.59385, lat = 55.67385,
+             popup = "Vor frelsers kirke",
+             group = "Vor frelsers kirke") %>%
+  
+  addMarkers(lng = 12.53364, lat = 55.71753,
+             popup = "Grundtvigs kirke",
+             group = "Grundtvigs kirke") %>%
+  
+  addMarkers(lng = 12.59228, lat = 55.68715,
+             popup = "Sankt Ansgars Kirke",
+             group = "Sankt Ansgars Kirke") %>%
+  
+  addLayersControl(
+    overlayGroups = c("Vor frue Kirke", "Trinitatis kirke", "Vor frelsers kirke", "Grundtvigs kirke", "Sankt Ansgars Kirke"),
+    options = layersControlOptions(collapsed = FALSE)
+  )
+
+my_map
